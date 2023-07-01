@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #fd9c9c;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #120f0f;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    form {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    h3 {
+      color: #120f0f;
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Coupon Wheel</h1>
+    <form action="/spin" method="POST">
+      <button type="submit" id="spinButton">Spin</button>
+    </form>
+    
+    <% if (spinCount === 1) { %>
+      <h3>Try again!</h3>
+    <% } else if (spinCount === 2) { %>
+      <h3>Prize: <%= prize %></h3>
+    <% } %>
+  </div>
+</body>
+</html>
